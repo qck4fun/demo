@@ -1,0 +1,13 @@
+services:
+  playground-db:
+    container_name: playground-db
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    tty: true
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=mssql1234.
+      - MSSQL_PID=Express
+    user: "10001:10001"
+    ports:
+      - "1434:1433"
